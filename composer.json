@@ -1,0 +1,24 @@
+{
+  "name": "jgrossi/petty",
+  "description": "A very simple URL shortener using custom domains",
+  "homepage": "http://github.com/jgrossi/petty",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Junior Grossi",
+      "email": "juniorgro@gmail.com",
+      "homepage": "http://jgrossi.com"
+    }
+  ],
+  "require": {
+    "php":  ">=5.4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Petty\\": "src/"
+    }
+  }
+}
