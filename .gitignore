@@ -1,3 +1,5 @@
 vendor
 .idea
 .DS_Store
+composer.lock
+node_modules
