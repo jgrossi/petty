@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "laravel-elixir": "^5.0.0"
+  }
+}
