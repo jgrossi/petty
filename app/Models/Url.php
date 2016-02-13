@@ -17,7 +17,15 @@ class Url extends Model
      */
     protected $domain;
 
-    public function __construct(array $attributes)
+    /**
+     * @var array
+     */
+    protected $fillable = ['original_url', 'destination_provider', 'destination_url', 'hash'];
+
+    /**
+     * @param array $attributes
+     */
+    public function __construct(array $attributes = [])
     {
         $this->setDomain(config('petty.domain'));
 
@@ -32,9 +40,11 @@ class Url extends Model
         $this->domain = trim($domain, '/').'/';
     }
 
-    public function short($url)
+    public function short()
     {
-//        Hashids::encode()
+        $id = Hashids::encode($this->id);
+        $this->hash = $id;
+        $this->save();
 
         return $this->domain.$id;
     }
