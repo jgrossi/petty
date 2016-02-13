@@ -20,24 +20,7 @@
             </ul>
         </div>
         <div class="body text-center">
-            <form action="" method="GET">
-                <div class="form-group">
-                    <input type="email" class="form-control" id="url" placeholder="http://example.com">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block btn-lg">
-                        Short it!
-                    </button>
-                </div>
-            </form>
-            <div class="well well-sm well-url">
-                <div class="input-group input-group-lg">
-                    <input type="text" class="form-control" value="http://jgro.me/Inx7">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" type="button">Copy!</button>
-                    </span>
-                </div>
-            </div>
+            @yield('content')
         </div>
         <div class="footer text-center">
             &copy; 2016 <a href="http://github.com/jgrossi/petty">Petty URL Shortener</a>
