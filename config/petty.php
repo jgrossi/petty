@@ -14,4 +14,16 @@ return [
 
     'domain' => env('PETTY_DOMAIN', 'http://example.com'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Petty minimum characters size
+    |--------------------------------------------------------------------------
+    |
+    | This value determines the minimum number of characters generate
+    | in the shortened URL.
+    |
+    */
+
+    'size' => env('PETTY_SIZE', 2),
+
 ];

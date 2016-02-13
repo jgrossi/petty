@@ -2,6 +2,7 @@
 
 namespace Petty\Providers;
 
+use Hashids\Hashids;
 use Illuminate\Support\ServiceProvider;
 
 class HashidsServiceProvider extends ServiceProvider
@@ -14,8 +15,11 @@ class HashidsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->bind('hashids', function($app) {
+
             $key = config('app.key');
-            return new Hashids($key, 2);
+            $size = config('petty.size');
+
+            return new Hashids($key, $size);
         });
     }
 
