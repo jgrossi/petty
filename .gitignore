@@ -1,5 +1,8 @@
-vendor
-.idea
-.DS_Store
+/bower_components
+/vendor
+/node_modules
+/public/storage
+/.idea
+.env*
 composer.lock
-node_modules
+.DS_Store

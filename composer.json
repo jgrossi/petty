@@ -1,27 +1,54 @@
 {
-  "name": "jgrossi/petty",
-  "description": "A very simple URL shortener using custom domains",
-  "homepage": "http://github.com/jgrossi/petty",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Junior Grossi",
-      "email": "juniorgro@gmail.com",
-      "homepage": "http://jgrossi.com"
+    "name": "jgrossi/petty",
+    "description": "A very simple URL shortener using custom domains",
+    "keywords": ["url", "shortener", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.4.0",
+        "laravel/framework": "5.2.*",
+        "mremi/url-shortener": ">=1.0.0",
+        "hashids/hashids": ">=1.0.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~4.0",
+        "symfony/css-selector": "2.8.*|3.0.*",
+        "symfony/dom-crawler": "2.8.*|3.0.*"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "Petty\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "php artisan clear-compiled",
+            "php artisan optimize"
+        ],
+        "pre-update-cmd": [
+            "php artisan clear-compiled"
+        ],
+        "post-update-cmd": [
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
     }
-  ],
-  "require": {
-    "php":  ">=5.4.0",
-    "mremi/url-shortener": ">=1.0.0",
-    "hashids/hashids": ">=1.0.0",
-    "twbs/bootstrap": "^3.3"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "4.2.2"
-  },
-  "autoload": {
-    "psr-4": {
-      "Petty\\": "src/"
-    }
-  }
 }
