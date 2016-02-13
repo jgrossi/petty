@@ -15,9 +15,9 @@ class CreateUrlTable extends Migration
         Schema::create('url', function (Blueprint $table) {
             $table->increments('id');
             $table->string('original_url');
-            $table->string('destination_provider');
-            $table->string('destination_url');
-            $table->string('hash');
+            $table->string('destination_provider')->nullable();
+            $table->string('destination_url')->nullable();
+            $table->string('hash')->nullable();
             $table->timestamps();
         });
     }
