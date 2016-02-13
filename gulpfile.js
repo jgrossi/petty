@@ -1,12 +1,16 @@
 var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
-    mix.less([
-        'styles.less',
-        'variables.less'
-    ], 'public/assets/styles.css');
-    //mix.scripts([
-    //    './public/assets/js/jquery.js',
-    //    './public/assets/js/app.js'
-    //], './public/assets/scripts.js');
+
+    // Less CSS files
+    mix.less('styles.less', './public/css/styles.css');
+
+    // Javascript files
+    mix.scripts([
+        './bower_components/jquery/jquery.js',
+        './bower_components/bootstrap/dist/js/bootstrap.js',
+        './bower_components/jquery-ujs/src/rails.js',
+        'app.js'
+    ], './public/js/scripts.js');
+
 });
