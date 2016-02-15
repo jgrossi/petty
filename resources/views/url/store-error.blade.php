@@ -3,6 +3,6 @@
         .addClass('has-error')
         .find('.alert')
         .html('{{ $errors['original_url'][0] }}')
-        .show();
+        .fadeIn();
     $('#input-original-url').focus();
 @endif
