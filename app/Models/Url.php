@@ -48,4 +48,9 @@ class Url extends Model
 
         return $this->domain.$id;
     }
+
+    public function getShortUrlAttribute()
+    {
+        return $this->domain.$this->hash;
+    }
 }
