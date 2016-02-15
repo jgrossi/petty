@@ -13,4 +13,10 @@ elixir(function(mix) {
         'app.js'
     ], './public/js/scripts.js');
 
+    // Copy Font-Awesome fonts
+    mix.copy(
+        './bower_components/components-font-awesome/fonts',
+        'public/fonts'
+    );
+
 });
