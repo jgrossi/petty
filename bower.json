@@ -4,7 +4,8 @@
   "dependencies": {
     "bootstrap": "~3.0.0",
     "jquery": "~1.10.2",
-    "jquery-ujs": "~1.2.0"
+    "jquery-ujs": "~1.2.0",
+    "components-font-awesome": "~4.5.0"
   },
   "private": true
 }
