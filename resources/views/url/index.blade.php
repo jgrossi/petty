@@ -18,19 +18,18 @@
             @foreach($urls as $url)
                 <tr>
                     <td>
-                        <a href="#">{{ $url->short_url}}</a>
+                        <a href="{{ $url->short_url }}" target="_blank">
+                            {{ $url->short_url}}
+                        </a>
                         <div class="pull-right">
-                            <a href="#" title="{{ $url->original_url }}">
+                            <a href="{{ $url->original_url }}" title="{{ $url->original_url }}" target="_blank">
                                 <i class="fa fa-link fa-lg"></i>
                             </a>
-                            {{--<a href="#">--}}
-                                {{--<i class="fa fa-external-link fa-lg"></i>--}}
-                            {{--</a>--}}
                         </div>
                     </td>
                     <td>
-                        http://bit.ly/J9j6gaj
-                        <a href="#" class="pull-right" title="See statistics">
+                        {{ $url->destination_url }}
+                        <a href="https://bitly.com/a/bitlinks" class="pull-right" title="See statistics" target="_blank">
                             <i class="fa fa-bar-chart fa-lg"></i>
                         </a>
                     </td>
