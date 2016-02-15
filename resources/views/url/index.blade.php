@@ -20,7 +20,7 @@
                     <td>
                         <a href="#">{{ $url->short_url}}</a>
                         <div class="pull-right">
-                            <a href="#">
+                            <a href="#" title="{{ $url->original_url }}">
                                 <i class="fa fa-link fa-lg"></i>
                             </a>
                             {{--<a href="#">--}}
@@ -30,7 +30,7 @@
                     </td>
                     <td>
                         http://bit.ly/J9j6gaj
-                        <a href="#" class="pull-right">
+                        <a href="#" class="pull-right" title="See statistics">
                             <i class="fa fa-bar-chart fa-lg"></i>
                         </a>
                     </td>
