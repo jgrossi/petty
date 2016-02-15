@@ -1,9 +1,9 @@
-//@import './scheme.less';
 @import '../../../bower_components/bootstrap/less/bootstrap.less';
-//@import './variables-theme.less';
+@import '../../../bower_components/components-font-awesome/less/font-awesome.less';
+
+@fa-font-path: "../fonts";
+
 @import './variables.less';
-//@import './bootswatch.less';
-//@import './1pxdeep.less';
 
 body {
   padding-top: 30px;
@@ -11,7 +11,10 @@ body {
 }
 
 .container {
-  max-width: 450px;
+  max-width: 500px;
+  &.large {
+    //max-width: 600px;
+  }
 }
 
 .avatar {
@@ -31,6 +34,23 @@ body {
   margin-top: 30px;
 }
 
+.no-wrap {
+  word-wrap: break-word;
+}
+
+.table-urls {
+  width: 100%;
+  margin-bottom: 0;
+  tr {
+    td {
+      word-wrap: break-word;
+    }
+  }
+  + .pagination {
+    margin-bottom: 0;
+  }
+}
+
 .body {
   padding: 20px;
   //background-color: #ffffff;
@@ -44,4 +64,5 @@ body {
   //padding: 15px 0;
   //border-top: 1px solid #eee;
   margin-top: 25px;
+  padding-bottom: 30px;
 }
