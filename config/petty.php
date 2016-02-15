@@ -48,4 +48,26 @@ return [
 
     'name' => env('PETTY_NAME', 'Your Name'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Petty username for login purposes
+    |--------------------------------------------------------------------------
+    |
+    | The username to login inside Bitly
+    |
+    */
+
+    'username' => env('PETTY_USERNAME', 'petty'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Petty password
+    |--------------------------------------------------------------------------
+    |
+    | The user's password.
+    |
+    */
+
+    'password' => env('PETTY_PASSWORD', 'secret'),
+
 ];
