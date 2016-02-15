@@ -14,4 +14,5 @@
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', ['uses' => 'UrlController@create']);
     Route::resource('url', 'UrlController');
+    Route::get('{hash}', ['uses' => 'UrlController@show']);
 });

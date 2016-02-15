@@ -18,7 +18,7 @@ class UrlController extends Controller
 
     public function index()
     {
-        $urls = Url::orderBy('created_at', 'desc')->paginate(10);
+        $urls = $this->url->orderBy('created_at', 'desc')->paginate(10);
 
         return view('url.index', compact('urls'));
     }
@@ -35,5 +35,12 @@ class UrlController extends Controller
         $shortUrl = $url->short();
 
         return view('url.store', compact('shortUrl'));
+    }
+
+    public function show($hash)
+    {
+        $url = $this->url->where('hash', $hash)->first();
+
+        return redirect()->to($url->destination_url);
     }
 }

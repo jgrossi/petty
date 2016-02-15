@@ -15,7 +15,7 @@
             <h1>{{ config('petty.name') }}</h1>
             <p class="lead">
                 URL Shortener by <a href="#">Petty</a><br>
-                <code>http://jgro.me</code>
+                <code>{{ config('petty.domain') }}</code>
             </p>
             <ul class="nav nav-tabs nav-main">
                 <li class="active"><a href="{{ route('url.create') }}">New URL</a></li>
