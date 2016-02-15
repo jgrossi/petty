@@ -3,6 +3,9 @@
 namespace Petty\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Mremi\UrlShortener\Model\Link;
+use Mremi\UrlShortener\Provider\Bitly\BitlyProvider;
+use Mremi\UrlShortener\Provider\Bitly\OAuthClient;
 use Petty\Support\Facades\Hashids;
 
 class Url extends Model
@@ -44,6 +47,8 @@ class Url extends Model
     {
         $id = Hashids::encode($this->id);
         $this->hash = $id;
+        $this->destination_provider = 'bitly';
+        $this->destination_url = $this->getProviderLink();
         $this->save();
 
         return $this->domain.$id;
@@ -52,5 +57,20 @@ class Url extends Model
     public function getShortUrlAttribute()
     {
         return $this->domain.$this->hash;
+    }
+
+    protected function getProviderLink()
+    {
+        $link = new Link();
+        $link->setLongUrl($this->original_url);
+
+        $provider = new BitlyProvider(
+            new OAuthClient(config('petty.username'), config('petty.password')),
+            array()
+        );
+
+        $provider->shorten($link);
+
+        return $link->getShortUrl();
     }
 }
