@@ -9,6 +9,7 @@ elixir(function(mix) {
     mix.scripts([
         './bower_components/jquery/jquery.js',
         './bower_components/bootstrap/dist/js/bootstrap.js',
+        './bower_components/clipboard/dist/clipboard.js',
         './bower_components/jquery-ujs/src/rails.js',
         'app.js'
     ], './public/js/scripts.js');

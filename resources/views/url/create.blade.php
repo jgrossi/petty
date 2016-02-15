@@ -20,9 +20,9 @@
     {{ Form::close() }}
     <div class="well well-sm well-url">
         <div class="input-group input-group-lg">
-            <input type="text" class="form-control" id="input-url" placeholder="Short link...">
+            <input type="text" class="form-control" value="Boller" id="input-url" placeholder="Short link...">
             <span class="input-group-btn">
-                <button class="btn btn-warning" type="button" id="btn-copy-url">Copy!</button>
+                <button class="btn btn-warning" data-toggle="tooltip" type="button" id="btn-copy-url" data-clipboard-target="#input-url">Copy!</button>
             </span>
         </div>
     </div>
