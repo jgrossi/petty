@@ -1,9 +1,13 @@
+//@import './scheme.less';
 @import '../../../bower_components/bootstrap/less/bootstrap.less';
-@import 'variables.less';
+//@import './variables-theme.less';
+@import './variables.less';
+//@import './bootswatch.less';
+//@import './1pxdeep.less';
 
 body {
   padding-top: 40px;
-  border-top: 40px solid #eee;
+  border-top: 40px solid @navbar-default-bg;
 }
 
 .container {
@@ -20,7 +24,7 @@ body {
 
 .body {
   padding: 20px;
-  background-color: #ffffff;
+  //background-color: #ffffff;
   border: 1px solid @nav-tabs-border-color;
   border-radius: 0 0 @border-radius-base @border-radius-base;
   margin-top: -1px;
