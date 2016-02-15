@@ -16,6 +16,13 @@ class UrlController extends Controller
         $this->url = $url;
     }
 
+    public function index()
+    {
+        $urls = Url::orderBy('created_at', 'desc')->paginate(10);
+
+        return view('url.index', compact('urls'));
+    }
+
     public function create()
     {
         return view('url.create');
