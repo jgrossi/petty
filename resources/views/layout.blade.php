@@ -26,7 +26,7 @@
             @yield('content')
         </div>
         <div class="footer text-center">
-            &copy; 2016 | Shortener by <a href="http://github.com/jgrossi/petty">Petty</a> |
+            &copy; 2016 | URL Shortener by <a href="http://github.com/jgrossi/petty">Petty</a> |
             Avatar by <a href="http://www.freepik.com/free-photos-vectors/man">Freepik</a>
         </div>
     </div>
