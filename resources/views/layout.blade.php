@@ -9,9 +9,12 @@
 <body>
     <div class="container">
         <div class="header text-center">
-            <h1>Petty URL Shortener</h1>
+            <a href="#" class="avatar">
+                <img src="{{ asset(config('petty.avatar')) }}" alt="" class="img-responsive">
+            </a>
+            <h1>{{ config('petty.name') }}</h1>
             <p class="lead">
-                Your own URL Shortener <br>
+                URL Shortener by <a href="#">Petty</a><br>
                 <code>http://jgro.me</code>
             </p>
             <ul class="nav nav-tabs nav-main">
@@ -23,7 +26,8 @@
             @yield('content')
         </div>
         <div class="footer text-center">
-            &copy; 2016 <a href="http://github.com/jgrossi/petty">Petty URL Shortener</a>
+            &copy; 2016 | Shortener by <a href="http://github.com/jgrossi/petty">Petty</a> |
+            Avatar by <a href="http://www.freepik.com/free-photos-vectors/man">Freepik</a>
         </div>
     </div>
     <script src="{{ asset('js/scripts.js') }}"></script>
