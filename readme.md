@@ -18,11 +18,10 @@ The app uses **your own domain**, and the generated URLs are customized for you.
 ## Installing
 
 ```
-cd /home/username/petty
-composer create-project jgrossi/petty .
+composer create-project jgrossi/petty my-shortener.
 ```
 
-Attention! Your web root (virtual host) will be `/home/username/petty/public`!
+Attention! Your web root (virtual host) will be `my-shortener/public`!
 
 ### Composer packages
 
@@ -41,6 +40,12 @@ npm install
 
 Bower will install Bootstrap, Clipboard.js, FontAwesome, jQuery and jQuery-UJS (by Ruby on Rails). NPM will install gulp and all elixir dependencies. 
 
+### Running your own assets
+
+After that you will have 3 more directories in your folder root: `vendor`, `bower_components` and `node_modules`. The original `css` and `js` files are stored in `resources/assets` folder.
+
+Running `gulp watch --production` will allow you to change the `resources/assets/css/*.less` and `resources/assets/js/*.js` files. So, after that `gulp` will join everything and minify the result, storing them in `public/css/styles.css` and `public/js/scripts.js` respectively.
+
 ## Configuration
 
 All configuration is made using `.env`. You'll have a `.env.sample` file where you can change with your own data and after rename it to `.env`. That's it!
@@ -53,9 +58,9 @@ APP_KEY=8gboHDJkh2q80dRPFcy6y0X5PsaUVcKa # This key is generated when you instal
 DB_CONNECTION=sqlite
 DB_FILE="database.sqlite" # You can change this if you want
 
-CACHE_DRIVER=file
-SESSION_DRIVER=file
-QUEUE_DRIVER=sync
+CACHE_DRIVER=file # Laravel default
+SESSION_DRIVER=file # Laravel default
+QUEUE_DRIVER=sync # Laravel default
 
 # The domain you want to use, like http://doma.in
 PETTY_DOMAIN="http://petty.dev"
@@ -75,12 +80,6 @@ PETTY_USERNAME="jgrossi"
 # Your Bitly password
 PETTY_PASSWORD=secret  
 ```
-
-### Running your own assets
-
-After that you will have 3 more directories in your folder root: `vendor`, `bower_components` and `node_modules`. The original `css` and `js` files are stored in `resources/assets` folder.
-
-Running `gulp watch --production` will allow you to change the `resources/assets/css/*.less` and `resources/assets/js/*.js` files. So, after that `gulp` will join everything and minify the result, storing them in `public/css/styles.css` and `public/js/scripts.js` respectively.
 
 ## Contributing
 
