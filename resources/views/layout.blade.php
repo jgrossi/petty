@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 <body>
+    <div id="header"></div>
     <div class="container @yield('container')">
         <div class="header text-center">
             <a href="#" class="avatar">
