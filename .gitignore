@@ -3,6 +3,7 @@
 /node_modules
 /public/storage
 /.idea
+/database/dev.sqlite
 .env*
 composer.lock
 .DS_Store
