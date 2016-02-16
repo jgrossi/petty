@@ -46,6 +46,7 @@ class Url extends Model
     public function short()
     {
         $id = Hashids::encode($this->id);
+
         $this->hash = $id;
         $this->destination_provider = 'bitly';
         $this->destination_url = $this->getProviderLink();
