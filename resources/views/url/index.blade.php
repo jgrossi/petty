@@ -25,11 +25,14 @@
                             <a href="{{ $url->original_url }}" title="{{ $url->original_url }}" target="_blank">
                                 <i class="fa fa-link fa-lg"></i>
                             </a>
+                            <a href="javascript:void(0)" title="Created {{ $url->created_at }}" target="_blank">
+                                <i class="fa fa-clock-o fa-lg"></i>
+                            </a>
                         </div>
                     </td>
                     <td>
                         {{ $url->destination_url }}
-                        <a href="https://bitly.com/a/bitlinks" class="pull-right" title="See statistics" target="_blank">
+                        <a href="https://bitly.com/a/bitlinks" class="pull-right" title="Go to Bitly" target="_blank">
                             <i class="fa fa-bar-chart fa-lg"></i>
                         </a>
                     </td>
@@ -37,18 +40,9 @@
             @endforeach
         </table>
 
-        {!! $urls->links() !!}
+        <div class="text-left div-pagination">
+            {!! $urls->links() !!}
+        </div>
     </div>
-
-    {{--@foreach($urls as $url)--}}
-        {{--<div class="panel panel-default text-left">--}}
-            {{--<div class="panel-heading">--}}
-                {{--<a href="#">{{ $url->short_url }}</a>--}}
-            {{--</div>--}}
-            {{--<div class="panel-body no-wrap">--}}
-                {{--{{ $url->original_url }}--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--@endforeach--}}
 
 @endsection
