@@ -1,8 +1,8 @@
 # Petty URL Shortener
 
-> Have your own URL shortener with easy.
+> Have your own URL shortener, using your own domain, with easy.
 
-<img width="600" src="http://i.imgur.com/IPMti51.png" alt="Petty Screenshot">
+<img width="600" src="./public/img/screenshot.png" alt="Petty Screenshot">
 
 
 Petty is a small PHP app (made with Laravel) that allows you to host your own URL shortener. It's clean and easy to use and install, allowing you to have your own shortener in a few minutes. 
