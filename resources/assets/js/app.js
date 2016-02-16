@@ -12,26 +12,31 @@ $(document).ready(function() {
         }
     });
 
-    //// Bootstrap tooltip
-    //$('#btn-copy-url').tooltip({
-    //    //container: 'body',
-    //    //trigger: 'manual'
-    //});
-    //
-    //$('#btn-copy-url').mouseleave(function(){
-    //    $('#btn-copy-url').tooltip('hide');
-    //});
-    //
-    //// Clipboard to copy shorten link
-    //var clipboard = new Clipboard('#btn-copy-url');
-    //
-    //clipboard.on('success', function(e) {
-    //    $('#btn-copy-url').attr('title', 'Copied!').tooltip('show');
-    //    e.clearSelection();
-    //});
-    //
-    //clipboard.on('error', function(e) {
-    //    $('#btn-copy-url').attr('title', 'Press Ctrl+C to copy!').tooltip('show');
-    //});
+    // Bootstrap tooltip
+    $('#btn-copy-url').tooltip({
+        container: 'body',
+        trigger: 'manual',
+        placement: 'top'
+    });
+
+    $('#btn-copy-url').mouseleave(function(){
+        $('#btn-copy-url').tooltip('hide');
+    });
+
+    // Clipboard to copy shorten link
+    var clipboard = new Clipboard('#btn-copy-url');
+
+    clipboard.on('success', function(e) {
+        $('#btn-copy-url').attr('data-original-title', 'Copied!')
+            .removeAttr('title')
+            .tooltip('show');
+        e.clearSelection();
+    });
+
+    clipboard.on('error', function(e) {
+        $('#btn-copy-url').attr('data-original-title', 'Press Ctrl+C to copy!')
+            .removeAttr('title')
+            .tooltip('show');
+    });
 
 });
