@@ -1,27 +1,88 @@
-# Laravel PHP Framework
+# Petty URL Shortener
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+> Have your own URL shortener with easy.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Petty is a small PHP app (made with Laravel) that allows you to host your own URL shortener. It's clean and easy to use and install, allowing you to have your own shortener in a few minutes. 
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+For now it does not support statistics, that is made initially by Bitly. We're working on new features and in the future Petty will do all the job. Please contribute with the project and suggest new features.
 
-## Official Documentation
+## How it works
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Petty shorts the original URL generating new URLs like `http://doma.in/m9`. This URL redirects you to Bitly shorten URL (to get statistics) and after to the original URL.
+
+The app uses **your own domain**, and the generated URLs are customized for you. All generated URL are stored in a Sqlite database and generated using your Laravel `APP_KEY`, so using `http://doma.in/m9` as example, the `m9` is generated only for you, and represents a row stored in your local database.
+
+## Installing
+
+```
+cd /home/username/petty
+composer create-project jgrossi/petty .
+```
+
+Attention! Your web root (virtual host) will be `/home/username/petty/public`!
+
+### Composer packages
+
+Now you have to install Composer packages. This will install everything the app need to run.
+
+```
+composer install
+```
+
+By default all `css` and `js` files are stored in `public` folder minified and merged. If you want to customize your assets files, like changing `css` or even `js` I suggest to install `bower` packages and `elixir (gulp)`. This will take a little:
+
+```
+bower install
+npm install
+```
+
+Bower will install Bootstrap, Clipboard.js, FontAwesome, jQuery and jQuery-UJS (by Ruby on Rails). NPM will install gulp and all elixir dependencies. 
+
+## Configuration
+
+All configuration is made using `.env`. You'll have a `.env.sample` file where you can change with your own data and after rename it to `.env`. That's it!
+
+```
+APP_ENV=local # Your app env
+APP_DEBUG=true # Enabe or disable debug?
+APP_KEY=8gboHDJkh2q80dRPFcy6y0X5PsaUVcKa # This key is generated when you install Petty
+
+DB_CONNECTION=sqlite
+DB_FILE="database.sqlite" # You can change this if you want
+
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
+
+# The domain you want to use, like http://doma.in
+PETTY_DOMAIN="http://petty.dev"
+
+# Minimum number of chars, like http://doma.in/m8 - the number 1 won't work
+PETTY_SIZE=2 
+
+# Your avatar image. By default we have set 2 avatars: `avatar-male.png` and `avatar-female.png` - Tranks to http://www.freepik.com. You can store your own image in `public` directory and link that, like `img/your-custom-avatar.png`;
+PETTY_AVATAR="img/avatar-male.png"
+
+# Your own name, like "Junior Grossi"
+PETTY_NAME="Your Name" 
+
+# Your Bitly username. If you don't have one just signup and get yours for free
+PETTY_USERNAME="jgrossi" 
+
+# Your Bitly password
+PETTY_PASSWORD=secret  
+```
+
+### Running your own assets
+
+After that you will have 3 more directories in your folder root: `vendor`, `bower_components` and `node_modules`. The original `css` and `js` files are stored in `resources/assets` folder.
+
+Running `gulp watch --production` will allow you to change the `resources/assets/css/*.less` and `resources/assets/js/*.js` files. So, after that `gulp` will join everything and minify the result, storing them in `public/css/styles.css` and `public/js/scripts.js` respectively.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Thank you for considering contributing to the Petty URL Shortener! Just made your changes, suggest and create a pull request to the `dev` branch. Any question just ask in `issues` section.
 
-## Security Vulnerabilities
+## Licence
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+[MIT License](http://jgrossi.mit-license.org/) © Junior Grossi
