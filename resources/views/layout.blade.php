@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Petty URL Shortener</title>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
