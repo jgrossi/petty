@@ -2,6 +2,9 @@
 
 > Have your own URL shortener with easy.
 
+<img width="600" src="http://i.imgur.com/IPMti51.png" alt="Petty Screenshot">
+
+
 Petty is a small PHP app (made with Laravel) that allows you to host your own URL shortener. It's clean and easy to use and install, allowing you to have your own shortener in a few minutes. 
 
 For now it does not support statistics, that is made initially by Bitly. We're working on new features and in the future Petty will do all the job. Please contribute with the project and suggest new features.
