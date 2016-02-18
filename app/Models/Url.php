@@ -74,4 +74,11 @@ class Url extends Model
 
         return $link->getShortUrl();
     }
+
+    public function originalUrlExists($originalUrl)
+    {
+        $result = $this->where('original_url', $originalUrl)->first();
+
+        return ! is_null($result);
+    }
 }
