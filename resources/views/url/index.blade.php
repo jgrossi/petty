@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section('title') | Last Shortened URLs @endsection
+
 @section('container') large @endsection
 
 @section('content')

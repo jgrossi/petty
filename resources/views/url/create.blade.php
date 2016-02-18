@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section('title') | New URL @endsection
+
 @section('content')
 
     {{ Form::open([
