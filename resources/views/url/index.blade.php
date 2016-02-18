@@ -7,13 +7,14 @@
     <div class="text-left">
         <table class="table table-striped table-bordered table-urls">
             <tr>
-                <th width="50%">
+                <th width="43%">
                     Short URL
                     @if($page = request('page'))
                         (Page #{{ $page }})
                     @endif
                 </th>
-                <th>Destination URL</th>
+                <th width="43%">Destination URL</th>
+                <th class="text-center">Clicks</th>
             </tr>
             @foreach($urls as $url)
                 <tr>
@@ -36,6 +37,7 @@
                             <i class="fa fa-bar-chart fa-lg"></i>
                         </a>
                     </td>
+                    <td class="text-center">3</td>
                 </tr>
             @endforeach
         </table>
