@@ -18,6 +18,7 @@ class CreateUrlTable extends Migration
             $table->string('destination_provider')->nullable();
             $table->string('destination_url')->nullable();
             $table->string('hash')->nullable();
+            $table->integer('clicks')->default(0);
             $table->timestamps();
         });
     }
