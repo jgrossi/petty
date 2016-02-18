@@ -31,8 +31,15 @@ class UrlController extends Controller
     public function store(UrlRequest $request)
     {
         $data = $request->only(['original_url']);
-        $url = $this->url->create($data);
-        $shortUrl = $url->short();
+        $originalUrl = $data['original_url'];
+
+        if ($this->url->originalUrlExists($originalUrl)) {
+            $url = $this->url->where('original_url', $originalUrl)->first();
+            $shortUrl = $url->short_url;
+        } else {
+            $url = $this->url->create($data);
+            $shortUrl = $url->short();
+        }
 
         return view('url.store', compact('shortUrl'));
     }
