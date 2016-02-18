@@ -31,7 +31,7 @@
         <div class="footer text-center">
             &copy; 2016 | Made with &#9829; by
             <a href="http://jgrossi.com" target="_blank">Junior Grossi</a><br>
-            Get the code on <a href="http://github.com/jgrossi/petty">GitHub</a> |
+            Get the code from <a href="http://github.com/jgrossi/petty">GitHub</a> |
             Avatar by <a href="http://www.freepik.com/free-photos-vectors/man">Freepik</a>
         </div>
     </div>
