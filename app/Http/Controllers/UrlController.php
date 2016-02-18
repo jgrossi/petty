@@ -40,6 +40,8 @@ class UrlController extends Controller
     public function show($hash)
     {
         $url = $this->url->where('hash', $hash)->first();
+        $url->clicks += 1;
+        $url->save();
 
         return redirect()->to($url->destination_url);
     }
