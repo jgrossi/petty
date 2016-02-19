@@ -4,6 +4,6 @@
 /public/storage
 /.idea
 /database/dev.sqlite
-.env*
+.env
 composer.lock
 .DS_Store
