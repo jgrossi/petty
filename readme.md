@@ -23,20 +23,9 @@ composer create-project jgrossi/petty my-shortener
 
 Attention! Your web root (virtual host) will be `my-shortener/public`!
 
-### Running your own assets
+## Usage
 
-By default all `css` and `js` files are stored in `public` folder minified and merged. If you want to customize your assets files, like changing `css` or even `js` I suggest to install `bower` packages and `elixir (gulp)`. This will take a little:
-
-```
-bower install
-npm install
-```
-
-Bower will install Bootstrap, Clipboard.js, FontAwesome, jQuery and jQuery-UJS (by Ruby on Rails). NPM will install gulp and all elixir dependencies. 
-
-After that you will have 3 more directories in your folder root: `vendor`, `bower_components` and `node_modules`. The original `css` and `js` files are stored in `resources/assets` folder.
-
-Running `gulp watch --production` will allow you to change the `resources/assets/css/*.less` and `resources/assets/js/*.js` files. So, after that `gulp` will join everything and minify the result, storing them in `public/css/styles.css` and `public/js/scripts.js` respectively.
+As Petty for now does not provide more statistics (only clicks) every short URL has your Bitly correspondent. So before use your own URL shortener you should create a free [Bitly](http://bitly.com) account and set your `username` and `password` to the `.env` file. More information in the *Configuration* section below.
 
 ## Configuration
 
@@ -72,6 +61,21 @@ PETTY_USERNAME="jgrossi"
 # Your Bitly password
 PETTY_PASSWORD=secret  
 ```
+
+### Running your own assets
+
+By default all `css` and `js` files are stored in `public` folder minified and merged. If you want to customize your assets files, like changing `css` or even `js` I suggest to install `bower` packages and `elixir (gulp)`. This will take a little:
+
+```
+bower install
+npm install
+```
+
+Bower will install Bootstrap, Clipboard.js, FontAwesome, jQuery and jQuery-UJS (by Ruby on Rails). NPM will install gulp and all elixir dependencies. 
+
+After that you will have 3 more directories in your folder root: `vendor`, `bower_components` and `node_modules`. The original `css` and `js` files are stored in `resources/assets` folder.
+
+Running `gulp watch --production` will allow you to change the `resources/assets/css/*.less` and `resources/assets/js/*.js` files. So, after that `gulp` will join everything and minify the result, storing them in `public/css/styles.css` and `public/js/scripts.js` respectively.
 
 ## Contributing
 
