@@ -18,18 +18,12 @@ The app uses **your own domain**, and the generated URLs are customized for you.
 ## Installing
 
 ```
-composer create-project jgrossi/petty my-shortener.
+composer create-project jgrossi/petty my-shortener
 ```
 
 Attention! Your web root (virtual host) will be `my-shortener/public`!
 
-### Composer packages
-
-Now you have to install Composer packages. This will install everything the app need to run.
-
-```
-composer install
-```
+### Running your own assets
 
 By default all `css` and `js` files are stored in `public` folder minified and merged. If you want to customize your assets files, like changing `css` or even `js` I suggest to install `bower` packages and `elixir (gulp)`. This will take a little:
 
@@ -39,8 +33,6 @@ npm install
 ```
 
 Bower will install Bootstrap, Clipboard.js, FontAwesome, jQuery and jQuery-UJS (by Ruby on Rails). NPM will install gulp and all elixir dependencies. 
-
-### Running your own assets
 
 After that you will have 3 more directories in your folder root: `vendor`, `bower_components` and `node_modules`. The original `css` and `js` files are stored in `resources/assets` folder.
 
