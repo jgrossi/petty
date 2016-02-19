@@ -18,7 +18,7 @@ The app uses **your own domain**, and the generated URLs are customized for you.
 ## Installing
 
 ```
-composer create-project jgrossi/petty my-shortener
+composer create-project --prefer-dist jgrossi/petty my-shortener
 ```
 
 Attention! Your web root (virtual host) will be `my-shortener/public`!
